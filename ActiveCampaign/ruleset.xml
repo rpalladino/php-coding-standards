@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<ruleset name="ActiveCampaign">
+  <description>ActiveCampaign PHP coding standard.</description>
+
+  <!--//
+    Standards specified on https://activecampaign.atlassian.net/wiki/display/DEV/Code+Standards
+    //-->
+
+  <!-- We use hard tabs for indentation.  -->
+  <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+
+  <!-- We use the 1TBS, or One True Brace Style. -->
+  <rule ref="Generic.Classes.OpeningBraceSameLine"/>
+  <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+  <rule ref="PEAR.ControlStructures.ControlSignature"/>
+  <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+  <!-- We use only the && and || operators for boolean and and or logic. -->
+  <rule ref="Squiz.Operators.ValidLogicalOperators"/>
+
+  <!-- Class names should be CamelCased with the first letter uppercased. -->
+  <rule ref="Squiz.Classes.ValidClassName"/>
+
+  <!-- Method names should be camelCased with the first letter lowercased. -->
+  <rule ref="PSR1.Methods.CamelCapsMethodName"/>
+
+  <!-- Standalone function names should be separated_by_underscores. -->
+  <!-- checked in Functions/SnakeCaseFunctionNameSniff -->
+
+  <!-- Your code must be documented using doc-comments. -->
+  <rule ref="Squiz.Commenting.ClassComment"/>
+  <rule ref="Squiz.Commenting.FunctionComment"/>
+  <rule ref="Squiz.Commenting.VariableComment"/>
+
+  <!-- You may not use # to begin PHP comments -->
+  <rule ref="PEAR.Commenting.InlineComment"/>
+
+  <!-- New code files must have an overview doc-comment. -->
+  <!-- @todo Do we actually follow this consistently? -->
+  <!-- <rule ref="Squiz.Commenting.FileComment"/> -->
+
+  <!-- Variable names should be meaningful. -->
+  <!-- @todo -->
+
+  <!-- It’s acceptable to use some short variable conventions in loops. -->
+  <!-- @todo -->
+
+  <!-- Function calls should have no space between their names and the parameter list. -->
+  <rule ref="PSR2.Methods.FunctionCallSignature"/>
+
+  <!-- Statement blocks which use parentheses should have spaces between the statement keyword and the parens. -->
+  <!-- checked in PEAR.ControlStructures.ControlSignature -->
+
+  <!-- We prefer using the form of if (x): ... endif; when doing conditional blocks inside mixed PHP/HTML code -->
+  <!-- @todo -->
+
+  <!-- Strings must be translatable. -->
+  <!-- @todo -->
+
+  <!-- You must escape all outbound data. -->
+  <!-- @todo -->
+
+  <!-- You must localize times for display. -->
+  <!-- @todo -->
+
+  <!-- All queries must be executed using our Select, Query and Result classes. -->
+  <!-- @todo -->
+
+  <!--//
+    Unspecified, but implied standards.
+    //-->
+
+  <!-- PHP code MUST use only UTF-8 without BOM. -->
+  <rule ref="Generic.Files.ByteOrderMark"/>
+
+  <!-- All PHP files MUST use the Unix LF (linefeed) line ending. -->
+  <rule ref="Generic.Files.LineEndings">
+    <properties>
+      <property name="eolChar" value="\n"/>
+    </properties>
+  </rule>
+
+  <!-- There is a soft limit on line length of 120 characters. -->
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="120"/>
+      <property name="absoluteLineLimit" value="0"/>
+    </properties>
+  </rule>
+
+  <!-- Each PHP statement must be on a line by itself. -->
+  <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+
+  <!-- Separate function arguments by 1 space. -->
+  <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+
+  <!-- Expect space before opening brace in function declaration. -->
+  <rule ref="Squiz.Functions.FunctionDeclaration"/>
+
+  <!-- PHP4 style constructors are not allowed. -->
+  <rule ref="Generic.NamingConventions.ConstructorName"/>
+
+  <!-- Constant names must be uppercase. -->
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+  <!-- Do not allow PHP short open tags. -->
+  <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+
+  <!-- All uses of true, false, and null are lowercase. -->
+  <rule ref="Generic.PHP.LowerCaseConstant"/>
+
+  <!-- All PHP keywords must be lowercase. -->
+  <rule ref="Generic.PHP.LowerCaseKeyword"/>
+
+  <!-- Ensure file does not end with a closing tag. -->
+  <rule ref="PSR2.Files.ClosingTag" />
+
+  <!-- Ensure file ends with a newline character. -->
+  <rule ref="PSR2.Files.EndFileNewline"/>
+
+  <!-- Do not leave trailing whitespace at the end of non-blank lines. -->
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+    <properties>
+      <property name="ignoreBlankLines" value="true"/>
+    </properties>
+  </rule>
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Visibility MUST be declared on all methods. -->
+  <rule ref="Squiz.Scope.MethodScope"/>
+  <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+
+  <!-- One class/interface/trait per file. -->
+  <rule ref="Generic.Files.OneClassPerFile"/>
+  <rule ref="Generic.Files.OneInterfacePerFile"/>
+  <rule ref="Generic.Files.OneTraitPerFile"/>
+
+  <!--//
+    Some rules that might be nice to have.
+    //-->
+
+  <!-- Warns about TODO comments. -->
+  <rule ref="Generic.Commenting.Todo"/>
+
+  <!-- Warns if control structures more than 5 levels deep. -->
+  <rule ref="Generic.Metrics.NestingLevel" />
+
+  <!-- Warns about silenced PHP errors. -->
+  <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+  <!-- Do not use parens with include. -->
+  <!-- Inside a conditional, use include_once. -->
+  <rule ref="PEAR.Files.IncludingFile"/>
+</ruleset>
