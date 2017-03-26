@@ -1,4 +1,14 @@
 {
+    "name": "activecampaign/php-coding-standards",
+    "description": "ActiveCampaign PHP Coding Standards",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rocco Palladino",
+            "email": "rpalladino@activecampaign.com"
+        }
+    ],
     "require": {
         "squizlabs/php_codesniffer": "^2.8"
     }
